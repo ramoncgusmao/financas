@@ -20,4 +20,9 @@ class LancamentoService:
         )
         
         return self.lancamento_repository.save(lancamento)
-        
+    
+    def buscar_todos(self) -> list:
+        return self.lancamento_repository.find_all()
+
+    def buscar_por_id(self, id) -> list:
+        return self.lancamento_repository.find_by_id(id)
