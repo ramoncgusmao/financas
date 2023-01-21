@@ -26,3 +26,20 @@ class LancamentoService:
 
     def buscar_por_id(self, id) -> list:
         return self.lancamento_repository.find_by_id(id)
+    
+    def deletar(self, id):
+        self.lancamento_repository.delete(id)
+
+    def atualizar(self, id, lancamento_dto: LancamentoDto) -> Lancamento:
+        lancamento_antigo = self.buscar_por_id(id)
+
+        lancamento_novo = Lancamento(
+            id = lancamento_antigo.id,
+            descricao=lancamento_dto.descricao,
+            tipo = lancamento_dto.tipo,
+            valor = lancamento_dto.valor,
+            data = lancamento_antigo.data
+        )
+
+        return self.lancamento_repository.update(lancamento_antigo, lancamento_novo)
+    

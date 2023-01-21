@@ -20,3 +20,12 @@ async def buscar_todos():
 @lancamento_route.get("/{id}")
 async def buscar_todos(id: int):
     return lancamento_service.buscar_por_id(id)
+
+
+@lancamento_route.delete("/{id}", status_code=204)
+async def deletar(id: int):
+    lancamento_service.deletar(id)
+
+@lancamento_route.put("/{id}")
+async def atualizar(id: int, lancamento_dto: LancamentoDto):
+    return lancamento_service.atualizar(id, lancamento_dto)
