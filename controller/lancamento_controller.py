@@ -1,5 +1,6 @@
-
-from fastapi import APIRouter
+import codecs
+import csv
+from fastapi import APIRouter, File, UploadFile
 
 from domain.lancamento_dto import LancamentoDto
 from service.lancamento_service import LancamentoService
@@ -29,3 +30,10 @@ async def deletar(id: int):
 @lancamento_route.put("/{id}")
 async def atualizar(id: int, lancamento_dto: LancamentoDto):
     return lancamento_service.atualizar(id, lancamento_dto)
+
+@lancamento_route.post("/em-lote")
+async def salvar_lote(arquivo: UploadFile = File()):
+    csv_reader = csv.DictReader(codecs.iterdecode(arquivo.file, 'utf-8'))
+    csv_list = list(csv_reader)
+    arquivo.file.close()
+    return lancamento_service.salvar_lote(csv_list)

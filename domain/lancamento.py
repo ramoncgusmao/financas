@@ -8,6 +8,8 @@ class Lancamento:
     id: int
     descricao: str
     tipo: str
-    data: datetime
-    valor: Optional[float] = 0.0
+    data_cadastro: datetime
+    data_pagamento: datetime
+    valor: float
+    
     

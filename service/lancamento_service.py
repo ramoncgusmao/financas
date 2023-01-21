@@ -1,5 +1,6 @@
 
 from datetime import datetime
+from typing import List
 from domain.lancamento import Lancamento
 from domain.lancamento_dto import LancamentoDto
 from repository.lancamento_repository import LancamentoRepository
@@ -16,7 +17,8 @@ class LancamentoService:
             descricao=lancamento_dto.descricao,
             tipo = lancamento_dto.tipo,
             valor = lancamento_dto.valor,
-            data = datetime.now()
+            data_cadastro = datetime.now(),
+            data_pagamento= lancamento_dto.data_pagamento,
         )
         
         return self.lancamento_repository.save(lancamento)
@@ -43,3 +45,15 @@ class LancamentoService:
 
         return self.lancamento_repository.update(lancamento_antigo, lancamento_novo)
     
+    def salvar_lote(self, list_json: list):
+        list_lancamento: List[Lancamento] = []
+        for json_lancamento in list_json:
+            
+            lancamento_dto = LancamentoDto(
+                descricao=json_lancamento['descricao'],
+                tipo=json_lancamento['tipo'],
+                valor=json_lancamento['valor'],
+                data_pagamento=json_lancamento['data_pagamento']
+            )
+            list_lancamento.append(self.salvar(lancamento_dto=lancamento_dto))
+        return list_lancamento
