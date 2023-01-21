@@ -11,5 +11,7 @@ class Lancamento:
     data_cadastro: datetime
     data_pagamento: datetime
     valor: float
+    mes: int
+    ano: int
     
     

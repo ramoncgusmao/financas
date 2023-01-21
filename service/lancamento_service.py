@@ -19,6 +19,8 @@ class LancamentoService:
             valor = lancamento_dto.valor,
             data_cadastro = datetime.now(),
             data_pagamento= lancamento_dto.data_pagamento,
+            mes= lancamento_dto.data_pagamento.month,
+            ano= lancamento_dto.data_pagamento.year
         )
         
         return self.lancamento_repository.save(lancamento)
@@ -48,12 +50,12 @@ class LancamentoService:
     def salvar_lote(self, list_json: list):
         list_lancamento: List[Lancamento] = []
         for json_lancamento in list_json:
-            
+            data_pagamento = datetime.strptime(json_lancamento['data_pagamento'],'%m/%d/%Y')
             lancamento_dto = LancamentoDto(
                 descricao=json_lancamento['descricao'],
                 tipo=json_lancamento['tipo'],
                 valor=json_lancamento['valor'],
-                data_pagamento=json_lancamento['data_pagamento']
+                data_pagamento=data_pagamento
             )
             list_lancamento.append(self.salvar(lancamento_dto=lancamento_dto))
         return list_lancamento
