@@ -1,2 +1,101 @@
 descricao,tipo,valor,data_pagamento
-salario,entrada,3000.0,10/20/2022
+freelance,entrada,2299.6,04/18/2022
+supermercado,saida,109.36,06/06/2022
+luz,saida,386.13,11/23/2022
+agua,saida,386.49,02/10/2022
+dinheiro emprestado,entrada,1159.92,07/18/2022
+lanche,saida,342.71,09/09/2022
+agua,saida,495.29,07/06/2022
+lanche,saida,496.45,09/17/2022
+salario,entrada,2399.14,03/28/2022
+agua,saida,61.2,10/27/2022
+supermercado,saida,190.6,09/02/2022
+cinema,saida,264.81,10/19/2022
+dinheiro emprestado,entrada,960.67,07/16/2022
+luz,saida,187.92,04/01/2022
+luz,saida,317.82,12/04/2022
+internet,saida,353.89,07/20/2022
+dinheiro emprestado,entrada,980.4,06/06/2022
+internet,saida,341.31,11/07/2022
+agua,saida,305.23,02/13/2022
+luz,saida,267.5,10/15/2022
+dinheiro emprestado,entrada,2589.99,07/06/2022
+agua,saida,224.86,10/18/2022
+agua,saida,393.53,05/14/2022
+cinema,saida,430.98,12/09/2022
+freelance,entrada,2502.75,01/01/2022
+cinema,saida,486.3,11/04/2022
+lanche,saida,92.9,07/08/2022
+internet,saida,74.13,08/04/2022
+freelance,entrada,1377.4,05/10/2022
+supermercado,saida,491.28,10/07/2022
+cinema,saida,278.49,08/09/2022
+lanche,saida,199.62,10/08/2022
+freelance,entrada,2463.64,08/12/2022
+agua,saida,207.88,09/28/2022
+cartao de credito,saida,110.63,06/12/2022
+internet,saida,496.47,08/02/2022
+freelance,entrada,579.27,05/12/2022
+internet,saida,114.26,06/05/2022
+lanche,saida,36.39,11/21/2022
+supermercado,saida,484.33,11/16/2022
+extra,entrada,974.57,02/13/2022
+supermercado,saida,123.2,05/07/2022
+luz,saida,361.98,03/14/2022
+internet,saida,282.87,12/25/2022
+extra,entrada,2882.06,05/21/2022
+internet,saida,375.86,09/28/2022
+cartao de credito,saida,334.64,08/13/2022
+cartao de credito,saida,340.46,09/10/2022
+extra,entrada,1457.26,05/12/2022
+cartao de credito,saida,138.07,01/14/2022
+lanche,saida,109.99,11/25/2022
+cinema,saida,412.05,10/23/2022
+salario,entrada,2012.03,08/11/2022
+agua,saida,310.61,08/09/2022
+internet,saida,213.12,09/19/2022
+luz,saida,150.75,01/04/2022
+freelance,entrada,1293.81,01/21/2022
+cinema,saida,161.44,11/07/2022
+luz,saida,220.43,09/13/2022
+cinema,saida,24.24,11/19/2022
+freelance,entrada,608.39,03/07/2022
+internet,saida,108.23,11/14/2022
+supermercado,saida,31.44,01/04/2022
+cartao de credito,saida,204.48,10/03/2022
+extra,entrada,2265.89,03/07/2022
+cinema,saida,154.18,02/19/2022
+cinema,saida,422.44,04/12/2022
+cinema,saida,492.96,08/25/2022
+freelance,entrada,1161.77,11/21/2022
+supermercado,saida,434.71,07/03/2022
+agua,saida,378.66,09/09/2022
+luz,saida,151.16,07/23/2022
+freelance,entrada,2656.01,12/13/2022
+cartao de credito,saida,373.59,08/28/2022
+luz,saida,341.53,03/08/2022
+agua,saida,246.39,03/20/2022
+salario,entrada,1828.94,02/07/2022
+agua,saida,274.78,05/26/2022
+supermercado,saida,377.36,01/15/2022
+agua,saida,309.55,06/22/2022
+freelance,entrada,2565.06,08/28/2022
+luz,saida,201.59,07/03/2022
+cartao de credito,saida,49.76,11/09/2022
+cinema,saida,494.4,02/24/2022
+salario,entrada,1829.68,10/13/2022
+lanche,saida,327.66,02/21/2022
+cinema,saida,394.81,08/22/2022
+cartao de credito,saida,350.28,01/01/2022
+salario,entrada,1858.73,10/11/2022
+agua,saida,411.43,05/14/2022
+internet,saida,445.26,05/26/2022
+cartao de credito,saida,404.63,09/22/2022
+dinheiro emprestado,entrada,700.5,06/08/2022
+luz,saida,103.52,10/04/2022
+luz,saida,435.49,10/18/2022
+lanche,saida,440.86,08/24/2022
+extra,entrada,1687.09,11/22/2022
+cinema,saida,230.04,05/14/2022
+internet,saida,120.08,05/01/2022
+cinema,saida,84.85,12/10/2022

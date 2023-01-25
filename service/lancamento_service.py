@@ -1,8 +1,10 @@
 
 from datetime import datetime
+import random
 from typing import List
 from domain.lancamento import Lancamento
 from domain.lancamento_dto import LancamentoDto
+from domain.parametros_lote_dto import ParametrosLoteDto
 from repository.lancamento_repository import LancamentoRepository
 
 
@@ -59,3 +61,26 @@ class LancamentoService:
             )
             list_lancamento.append(self.salvar(lancamento_dto=lancamento_dto))
         return list_lancamento
+
+    def popular_lancamentos(self,paramentos_lote: ParametrosLoteDto) -> List[LancamentoDto]:
+        lancamentos_dto: List[LancamentoDto] = []
+        entradas = ['salario', 'freelance', 'dinheiro emprestado', 'extra']
+        saidas = ['luz', 'agua', 'supermercado', 'lanche', 'cinema', 'cartao de credito', 'internet']
+        for i in range(paramentos_lote.quantidade):
+            indice = random.randint(0, (len(saidas) - 1))
+            descricao = saidas[indice]
+            tipo = 'saida'
+            valor = random.uniform(10.0, 500.00)
+            dia = random.randint(1,28)
+            mes = random.randint(1,12)
+            if(i % 4 == 0):
+                tipo = 'entrada'
+                valor = random.uniform(500.0, 3000.00)
+                indice = random.randint(0, (len(entradas) - 1))
+                descricao = entradas[indice]
+            
+            valor = round(valor, 2)
+            data_pagamento = datetime(year=paramentos_lote.ano, month=mes, day=dia)
+            lancamento_dto = LancamentoDto(descricao=descricao, tipo=tipo, valor=valor, data_pagamento=data_pagamento)
+            lancamentos_dto.append(lancamento_dto)
+        return lancamentos_dto
