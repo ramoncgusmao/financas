@@ -53,4 +53,4 @@ def popular_lancamento(parametros_de_lote: ParametrosLoteDto):
             writer.writerow([lacamento.descricao, lacamento.tipo, lacamento.valor, data_pagamento])
 
 
-    return FileResponse(file_path)    
+    return FileResponse(file_path)

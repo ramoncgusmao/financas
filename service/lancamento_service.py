@@ -27,10 +27,10 @@ class LancamentoService:
         
         return self.lancamento_repository.save(lancamento)
     
-    def buscar_todos(self) -> list:
+    def buscar_todos(self) -> List[Lancamento]:
         return self.lancamento_repository.find_all()
 
-    def buscar_por_id(self, id) -> list:
+    def buscar_por_id(self, id) -> Lancamento:
         return self.lancamento_repository.find_by_id(id)
     
     def deletar(self, id):
@@ -43,7 +43,7 @@ class LancamentoService:
             id = lancamento_antigo.id,
             descricao=lancamento_dto.descricao,
             tipo = lancamento_dto.tipo,
-            valor = lancamento_dto.valor,
+            valor = float(lancamento_dto.valor),
             data = lancamento_antigo.data
         )
 
@@ -56,7 +56,7 @@ class LancamentoService:
             lancamento_dto = LancamentoDto(
                 descricao=json_lancamento['descricao'],
                 tipo=json_lancamento['tipo'],
-                valor=json_lancamento['valor'],
+                valor=float(json_lancamento['valor']),
                 data_pagamento=data_pagamento
             )
             list_lancamento.append(self.salvar(lancamento_dto=lancamento_dto))
@@ -69,12 +69,12 @@ class LancamentoService:
         for i in range(paramentos_lote.quantidade):
             indice = random.randint(0, (len(saidas) - 1))
             descricao = saidas[indice]
-            tipo = 'saida'
+            tipo = 'pago'
             valor = random.uniform(10.0, 500.00)
             dia = random.randint(1,28)
             mes = random.randint(1,12)
             if(i % 4 == 0):
-                tipo = 'entrada'
+                tipo = 'recebido'
                 valor = random.uniform(500.0, 3000.00)
                 indice = random.randint(0, (len(entradas) - 1))
                 descricao = entradas[indice]

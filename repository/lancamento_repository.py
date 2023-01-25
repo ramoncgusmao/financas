@@ -1,10 +1,11 @@
 
+from typing import List
 from domain.lancamento import Lancamento
 
 
 class LancamentoRepository:
 
-    db_lancamento: list = []
+    db_lancamento: List[Lancamento] = []
     indice: int = 0
 
     def save(self, lancamento: Lancamento) -> Lancamento:
@@ -13,10 +14,10 @@ class LancamentoRepository:
         self.db_lancamento.append(lancamento)
         return lancamento
     
-    def find_all(self) -> list:
+    def find_all(self) -> List[Lancamento]:
         return self.db_lancamento
 
-    def find_by_id(self, id) -> list:
+    def find_by_id(self, id) -> Lancamento:
 
         return next(filter(lambda lancamento: lancamento.id == id, self.db_lancamento),None)
 
