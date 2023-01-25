@@ -1,7 +1,8 @@
 import codecs
 import csv
+from datetime import datetime 
 from fastapi import APIRouter, File, UploadFile
-
+from fastapi.responses import FileResponse
 from domain.lancamento_dto import LancamentoDto
 from service.lancamento_service import LancamentoService
 
@@ -37,3 +38,17 @@ async def salvar_lote(arquivo: UploadFile = File()):
     csv_list = list(csv_reader)
     arquivo.file.close()
     return lancamento_service.salvar_lote(csv_list)
+
+
+@lancamento_route.post("/popular")
+def popular_lancamento():
+    lancamentos_dto = [LancamentoDto('salario', 'entrada', 3000.00, datetime(year=2022, month=10, day=20))]
+    file_path = 'arquivo_lancamento.csv'
+    with open(file_path, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['descricao', 'tipo','valor', 'data_pagamento'])
+        for lacamento in lancamentos_dto:
+            data_pagamento = lacamento.data_pagamento.strftime('%m/%d/%Y')
+            writer.writerow([lacamento.descricao, lacamento.tipo, lacamento.valor, data_pagamento])
+
+    return FileResponse(file_path)    
