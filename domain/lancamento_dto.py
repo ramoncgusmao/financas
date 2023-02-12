@@ -7,3 +7,4 @@ class LancamentoDto:
     descricao: str
     tipo: str
     valor: float
+    data_pagamento: datetime
